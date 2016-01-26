@@ -77,12 +77,12 @@
       
         return "data_heat_1";
       }
-​
+
     // active users
       var dauGraph = $('#DAU').MPChart({chartType: 'line'});
       var wauGraph  = $('#WAU').MPChart({chartType: 'line'});
       var mauGraph = $('#MAU').MPChart({chartType: 'line'});
-​
+
       function xau(unit, count, graph) {
         MP.api.segment('Session', null, {         
             from: moment().subtract(count, unit + 's'),
@@ -107,14 +107,14 @@
         graphDiv.MPChart({chartType: 'line'});
         
         usageData('day', 30, event, graphDiv);
-​
+
         selectDiv.on('change', function() {
           var unit = selectDiv.val();
           var count = unit === 'day' ? 30 : unit === 'week' ? 24 : 12;
           usageData(unit, count, event, graphDiv);
         });
       }
-​
+
       function usageData(unit, count, event, graphDiv) {
         var promises = [];
         var unique = new Promise(function(resolve,reject) {
@@ -189,7 +189,7 @@
             }
         }
         keys.sort();
-​
+
         // create our newData structure
         for (var i = 0; i < keys.length; i++) {
           var key = keys[i];
